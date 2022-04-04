@@ -9,12 +9,49 @@ import sys
 # HELPER METHODS
 ############
 def set_movie_list():
-    movie_list = []
-    print("Good morning! Enter today's movies, Q to go back...")
-    user_input = input("Movie title:")
+    # user selects a screen and inputs movies for that screen until finished
+    movie_list = [[], [], [], [], []]
+    print("Good morning! Enter today's movies.")
+    print("Select a screen to begin. (Q to go back)")
+    print("1. Screen One 2. Screen Two 3. Screen Three 4. Screen Four 5. Screen Five")
+    user_input = input(">")
     while user_input.upper() != "Q":
-        movie_list.append(user_input)
-        user_input = input("Movie title:")
+        #are there more efficient ways to do this? yes. are we doing those? no.
+        match user_input:
+            case "1":
+                print("Screen One selected.")
+                user_input = input("Movie title: ")
+                while user_input.upper() != "Q":
+                    movie_list[0].append(user_input)
+                    user_input = input("Movie title: ")
+            case "2":
+                print("Screen Two selected.")
+                user_input = input("Movie title: ")
+                while user_input.upper() != "Q":
+                    movie_list[1].append(user_input)
+                    user_input = input("Movie title: ")
+            case "3":
+                print("Screen Three selected.")
+                user_input = input("Movie title: ")
+                while user_input.upper() != "Q":
+                    movie_list[2].append(user_input)
+                    user_input = input("Movie title: ")
+            case "4":
+                print("Screen Four selected.")
+                user_input = input("Movie title: ")
+                while user_input.upper() != "Q":
+                    movie_list[3].append(user_input)
+                    user_input = input("Movie title: ")
+            case "5":
+                print("Screen Five selected.")
+                user_input = input("Movie title: ")
+                while user_input.upper() != "Q":
+                    movie_list[4].append(user_input)
+                    user_input = input("Movie title: ")
+            case _:
+                print("Invalid input.")
+        print("1. Screen One 2. Screen Two 3. Screen Three 4. Screen Four 5. Screen Five")
+        user_input = input(">")
     return movie_list
 #############
 # MAIN
